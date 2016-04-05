@@ -8,7 +8,7 @@
 	
 	<div class="container-fluid">
 		<h1 class="sr-only">Chatter! A Twitter Rip-Off</h1>
-		<img class="center-block" src="img/chatter-web-sm.png" alt="Image of Chatter Logo" />
+		<img class="center-block" src="img/chatter-web-sm.png" alt="Image of Chatter Logo" data-bind="click: Add" />
 
 		<div class="list-group" data-bind="foreach: Chits">
 		  <div class="list-group-item clearfix">
@@ -18,7 +18,7 @@
 		        <button class="btn btn-md btn-warning">
 		        	<span class="glypicon glyphicon-pencil"></span>
 		        </button>
-		        <button class="btn btn-md btn-danger">
+		        <button class="btn btn-md btn-danger" data-bind="click: $root.Delete">
         			<span class="glyphicon glyphicon-trash"></span>
         		</button>
 		  	</span>
