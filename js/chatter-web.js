@@ -19,7 +19,7 @@ function ViewModel() {
 
 	self.Add = function() {
 		
-		var chit = { UserName: 'Jason', Message: 'Delete Me, Please!'};
+		var chit = { UserName: $("#username").val(), Message: $("#message").val()};
 
 		$.ajax({
 			url: 'http://chatter-api.azurewebsites.net/api/Chit', 
@@ -27,6 +27,9 @@ function ViewModel() {
 			data: JSON.stringify( chit ),
 			contentType: "application/json",
 			success: function(data){
+				
+				$("#username").val('');
+				$("#message").val('');
 				self.Init();
 				
 			},
